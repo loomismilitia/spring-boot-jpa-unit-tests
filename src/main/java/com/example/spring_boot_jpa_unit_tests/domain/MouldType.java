@@ -11,6 +11,10 @@ class MouldType extends AbstractPersistable<Short> {
 
     private String name;
 
+    MouldType() {
+        // thank you JPA \m/
+    }
+
     MouldType(Short id, String name) {
         this.setId(id);
         this.name = name;

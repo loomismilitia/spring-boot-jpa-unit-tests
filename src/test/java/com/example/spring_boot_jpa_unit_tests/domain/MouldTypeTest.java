@@ -16,12 +16,22 @@ public class MouldTypeTest {
     @Autowired
     protected TestEntityManager entityManager;
 
+    @Autowired
+    private MouldTypeRepository repository;
+
     @Test
     public void saveShouldPersistData() {
 
         MouldType mouldType = this.entityManager.persistFlushFind(MouldTypeTest.createSampleMouldType());
 
         assertThat(mouldType.getId()).isEqualTo(1);
+        assertThat(mouldType.getName()).isEqualTo("2K Injection");
+    }
+
+    @Test
+    public void saveWithRepositoryShouldPersistData() {
+        this.repository.save(createSampleMouldType());
+        MouldType mouldType = this.repository.findOne((short) 1);
         assertThat(mouldType.getName()).isEqualTo("2K Injection");
     }
 
