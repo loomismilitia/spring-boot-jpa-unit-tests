@@ -21,11 +21,11 @@ public class MouldTypeTest {
 
         MouldType mouldType = this.entityManager.persistFlushFind(MouldTypeTest.createSampleMouldType());
 
-        assertThat(mouldType.getId()).isEqualTo(1);
+        assertThat(mouldType.getId()).isEqualTo((short)2);
         assertThat(mouldType.getName()).isEqualTo("2K Injection");
     }
 
     static MouldType createSampleMouldType(){
-        return new MouldType((short) 1, "2K Injection");
+        return new MouldType((short) 2, "2K Injection");
     }
 }

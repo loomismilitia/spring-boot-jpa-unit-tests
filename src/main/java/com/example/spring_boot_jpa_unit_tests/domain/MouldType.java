@@ -1,18 +1,23 @@
 package com.example.spring_boot_jpa_unit_tests.domain;
 
 import lombok.Getter;
-import org.springframework.data.jpa.domain.AbstractPersistable;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Getter
 @Entity
-class MouldType extends AbstractPersistable<Short> {
+@NoArgsConstructor
+class MouldType {
+
+    @Id
+    private Short id;
 
     private String name;
 
     MouldType(Short id, String name) {
-        this.setId(id);
+        this.id = id;
         this.name = name;
     }
 }
