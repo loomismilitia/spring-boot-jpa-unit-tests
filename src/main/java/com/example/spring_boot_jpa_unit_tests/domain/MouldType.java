@@ -16,6 +16,10 @@ class MouldType {
 
     private String name;
 
+    MouldType() {
+        // thank you JPA \m/
+    }
+
     MouldType(Short id, String name) {
         this.id = id;
         this.name = name;
