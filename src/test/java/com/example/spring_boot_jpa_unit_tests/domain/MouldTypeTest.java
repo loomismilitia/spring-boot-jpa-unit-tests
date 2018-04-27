@@ -31,7 +31,7 @@ public class MouldTypeTest {
     @Test
     public void saveWithRepositoryShouldPersistData() {
         this.repository.save(createSampleMouldType());
-        MouldType mouldType = this.repository.findOne((short) 1);
+        MouldType mouldType = this.repository.findOne((short) 2);
         assertThat(mouldType.getName()).isEqualTo("2K Injection");
     }
 
